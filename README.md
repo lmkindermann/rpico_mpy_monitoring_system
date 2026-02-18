@@ -37,6 +37,29 @@ The Raspberry Pi Pico peripherals used are:
 * Timers to adjust the monitoring period and indicators control.
 * Interruption Request for the Tactile Switch detection.
 
+# Board Connections
+Parts shall be connected to Raspberry Pi Pico board according to the following pinout:
+01 - UART0_TX_GP0 <-> HC05_RXD     40 - VBUS <-> HC05_VDD
+02 - UART0_RX_GP1 <-> HC05_TXD     39 - VSYS <-> HCSR04_VDD
+03 - GND                           38 - GND <-> HC05_GND
+04 - I2C1_SDA_GP2 <-> BMP280_SDA   37 - 3V3_EN
+05 - I2C1_SCL_GP3 <-> BMP280_SCL   36 - 3V3_OUT <-> BUTTON(+), BMP280_VDD
+06 -                               35 - 
+07 -                               34 -
+08 - GND                           33 - GND <-> BMP280_GND
+09 -                               32 -
+10 -                               31 -
+11 -                               30 -
+12 -                               29 -
+13 - GND <-> BUZZER(-)             28 - GND
+14 -                               27 -
+15 -                               26 -
+16 -                               25 -
+17 - GP13 <-> BUZZER(+)            24 -
+18 - GND <-> 220R <-> LED(-)       23 - GND <-> HCSR04_GND
+19 - GP14 <-> BUTTON(-)            22 - GP17 <-> HCSR04_TRIG
+20 - GP15 <-> LED(+)               21 - GP16 <-> HCSR04_ECHO
+
 # Code Execution
 Code was tested using Thonny IDE interface opening the "monitoring_system.py" and clicking in the Run button (green play icon).
 
@@ -48,6 +71,8 @@ To run this code automatically after the power-up sequence, save the code direct
 The file "application_flowchart.png" shows how the peripherals are interconnected.
 
 The file "assemble_connection.png" shows how to connect all the parts to assemble the setup.
+
+The file "rpi_pico_gpio_pinout.png" shows the Raspberry Pi Pico GPIO Table for board connections reference.
 
 Pictures "setup_assembled_01-02.jpg" shows the setup assembled and used during my development.
 
